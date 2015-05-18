@@ -13,9 +13,39 @@
             
             <p:panel header="RegistrationForm" style="width: 500px;">
                 
+                <p:messages></p:messages>
                 
-                
-                
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="User Name:"></p:outputLabel>
+                    <p:inputText id="username" label="UserName"
+                                 value="#{uSerController.registrationUser.userName}"></p:inputText>
+                    
+                    <p:outputLabel value="Password:"></p:outputLabel>
+                    <p:password id="password" label="password"
+                                value="#{uSerController.registrationUser.password}"></p:password>
+                    
+                    <p:outputLabel value="First Name:"></p:outputLabel>
+                    <p:password id="firstName" label="First Name"
+                                value="#{uSerController.registrationUser.firstName}"></p:password>
+                    
+                    <p:outputLabel value="Last Name"></p:outputLabel>
+                    <p:password id="lastname" label="Last Name"
+                                value="#{uSerController.registrationUser.lastName}"></p:password>
+                    
+                    <p:outputLabel value="Email:"></p:outputLabel>
+                    <p:inputText id="email" label="Email:"
+                                 value="#{uSerController.registrationUser.email}"></p:inputText>
+                    
+                    <p:outputLabel value="Age:"></p:outputLabel>
+                    <p:inputMask id="age" label="Age" mask="4*" maxlength="3"
+                                 value="#{uSerController.registrationUser.age}"></p:inputMask>
+                               
+                    <p:outputLabel></p:outputLabel>             
+                    <p:commandButton value="Register" action="#{uSerController.register()}"
+                                     update="registrationForm"></p:commandButton>
+                    
+                </p:panelGrid>
+                    
                 
                 
             </p:panel>

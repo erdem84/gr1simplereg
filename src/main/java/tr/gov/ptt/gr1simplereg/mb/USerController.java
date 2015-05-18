@@ -6,6 +6,8 @@
 package tr.gov.ptt.gr1simplereg.mb;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import tr.gov.ptt.gr1simplereg.dto.USer;
 
@@ -13,6 +15,8 @@ import tr.gov.ptt.gr1simplereg.dto.USer;
  *
  * @author Administrator
  */
+@ManagedBean
+@RequestScoped
 public class USerController {
     
     private  USer registrationUser;
@@ -29,6 +33,9 @@ public class USerController {
         this.registrationUser = registrationUser;
     }
     
+    public USerController() {
+        this.registrationUser = registrationUser;
+    }
     
     public String register()
     {
@@ -43,7 +50,7 @@ public class USerController {
        FacesContext.getCurrentInstance().getExternalContext().
                getFlash().setKeepMessages(true);
        
-       return "registration.jsf?faces-redirect=true";
+       return "registration.xtml?faces-redirect=true";
        
     }
             
